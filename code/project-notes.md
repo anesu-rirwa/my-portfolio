@@ -46,3 +46,10 @@ Next.Js Version Used: @15.3.3
 - lib/: Utility functions (e.g., MDX parsing).
 - public/: Static assets like images.
 - styles/: Global CSS.
+
+## Packages Installed
+
+- Tailwind
+- react-icons
+- react-fast-marquee
+  > React Fast Marquee is a lightweight React component that harnesses the power of CSS animations to create silky smooth marquees.
