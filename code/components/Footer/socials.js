@@ -11,13 +11,13 @@ const socialLinks = [
 
 const Socials = () => {
   return (
-    <div className="flex justify-center bg-white pt-4 pb-2">
+    <div className="flex justify-center">
         <div className="flex justify-center space-x-5 mt-4">
             {socialLinks.map((social, index) => (
                 <Link 
                     key={index}
                     href={social.url}
-                    className={`text-2xl text-[${social.color}] hover:text-[${social.hoverColor}]`}
+                    className={`text-2xl bg-[${social.color}] hover:bg-[${social.hoverColor}]`}
                     >
                         {social.icon}
                 </Link>

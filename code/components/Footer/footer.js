@@ -3,11 +3,10 @@ import Socials from './socials'
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary p-4 text-center">
-        <Socials />
-        <div>
-            <p className='text-gray-600'>&copy; {new Date().getFullYear()} Anesu Rirwa | AI / ML Engineer </p>
-        </div>
+    <footer className='flex flex-col items-center justify-center min-h-[10vh] bg-gray-50 dark:bg-gray-800 border border-red-700'>
+      <Socials />
+        
+      <p className='text-white text-sm mt-3'>&copy; {new Date().getFullYear()} Anesu Rirwa | AI / ML Engineer </p>
     </footer>
   )
 }
