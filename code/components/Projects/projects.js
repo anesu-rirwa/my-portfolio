@@ -18,7 +18,7 @@ import { projectsList } from '@/data/data'
 
 const Projects = () => {
   return (
-    <section className='flex flex-col items-center justify-center min-h-[90vh] bg-gray-100'>
+    <section className='flex flex-col items-center justify-center min-h-[80vh] bg-gray-100'>
       <h1 className="text-3xl font-bold text-center pt-12">Projects</h1>
  
       <Swiper

@@ -20,7 +20,7 @@ const fadeInUp = {
 const Profile = () => {
   return (
     <motion.section
-      className="flex flex-col items-center justify-center min-h-[90vh] bg-white p-4"
+      className="flex flex-col items-center justify-center min-h-[80vh] bg-white p-4"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -34,7 +34,7 @@ const Profile = () => {
       </motion.h1>
 
       <motion.div
-        className="flex flex-col md:flex-row justify-center mt-8 md:space-x-12 space-y-8 md:space-y-0 max-w-6xl w-full"
+        className="flex flex-col md:flex-row justify-center mt-4 md:space-x-12 space-y-8 md:space-y-0 max-w-6xl w-full"
         variants={containerVariants}
       >
         {/* Column 1 */}
@@ -42,7 +42,7 @@ const Profile = () => {
           className="w-full md:w-1/2 px-4"
           variants={fadeInUp}
         >
-          <h2 className="text-xl font-semibold mt-4">My Journey Begins</h2>
+          <h2 className="text-xl font-semibold mt-2">My Journey Begins</h2>
           <p className="mt-2 text-gray-600 text-justify leading-relaxed">
             Growing up in Zimbabwe, I was always captivated by the patterns hidden in everyday life, how weather changed our routines, how people made decisions, and how small trends led to big outcomes. The insatiable curiosity I harbored as a child ultimately found its true identity in the world of data.
             <br /><br />
@@ -57,7 +57,7 @@ const Profile = () => {
           className="w-full md:w-1/2 px-4"
           variants={fadeInUp}
         >
-          <h2 className="text-xl font-semibold mt-4">Who I am Today</h2>
+          <h2 className="text-xl font-semibold mt-2">Who I am Today</h2>
           <p className="mt-2 text-gray-600 text-justify leading-relaxed">
             Today, I am an AI/ML Engineer and Data Analyst who thrives at the intersection of intelligent systems and real-world impact. I have built predictive models for housing markets, dashboards that uncover user behavior, and recommender systems that personalize experiences.
             <br /><br />

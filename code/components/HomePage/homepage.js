@@ -6,7 +6,7 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[80vh] bg-gray-50 p-4">
+    <section className="flex flex-col items-center justify-center h-[80vh] bg-gray-50 p-4">
       <Image
         src="/images/profile.jpg"
         alt="Profile"

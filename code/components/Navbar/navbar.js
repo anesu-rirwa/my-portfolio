@@ -8,15 +8,15 @@ export default function Navbar() {
 
     return (
         <nav className="relative bg-white shadow dark:bg-gray-800">
-            <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
-                <div className="flex items-center justify-between">
+            <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center lg:justify-center">
+                <div className="flex items-center justify-between lg:hidden">
 
                     {/* Mobile menu button */}
-                    <div className="flex lg:hidden">
+                    <div className="flex md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             type="button"
-                            className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                            className="text-gray-200 hover:text-gray-500  focus:outline-none focus:text-gray-500 "
                             aria-label="toggle menu"
                         >
                             {!isOpen ? (
@@ -39,15 +39,25 @@ export default function Navbar() {
                     lg:block`}
                 >
                     <div className="flex flex-col md:flex-row md:mx-6">
-                    <Link className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="/">Dashboard</Link>
+                    <Link className="md:px-8 md:py-2 -mb-px text-sm md:text-center md:bg-transparent md:border-b-2 md:border-gray-200 sm:text-base text-white whitespace-nowrap cursor-base md:focus:outline-none 
+                    hover:text-gray-300
+                    hover:border-blue-500" href="/">Dashboard</Link>
 
-                    <Link className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="/about-me">About Me</Link>
+                    <Link className="md:px-8 md:py-2 -mb-px text-sm md:text-center md:bg-transparent md:border-b-2 md:border-gray-200 sm:text-base text-white whitespace-nowrap cursor-base md:focus:outline-none 
+                    hover:text-gray-300
+                    hover:border-blue-500" href="/about-me">About Me</Link>
                     
-                    <Link className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="/experience">Experience</Link>
+                    <Link className="md:px-8 md:py-2 -mb-px text-sm md:text-center md:bg-transparent md:border-b-2 md:border-gray-200 sm:text-base text-white whitespace-nowrap cursor-base md:focus:outline-none 
+                    hover:text-gray-300
+                    hover:border-blue-500" href="/experience">Experience</Link>
 
-                    <Link className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="/projects">Projects</Link>
+                    <Link className="md:px-8 md:py-2 -mb-px text-sm md:text-center md:bg-transparent md:border-b-2 md:border-gray-200 sm:text-base text-white whitespace-nowrap cursor-base md:focus:outline-none 
+                    hover:text-gray-300
+                    hover:border-blue-500" href="/projects">Projects</Link>
                     
-                    <Link className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="/contact">Contact</Link>
+                    <Link className="md:px-8 md:py-2 -mb-px text-sm md:text-center md:bg-transparent md:border-b-2 md:border-gray-200 sm:text-base text-white whitespace-nowrap cursor-base md:focus:outline-none 
+                    hover:text-gray-300
+                    hover:border-blue-500" href="/contact">Contact</Link>
                     </div>
                 </div>
             </div>
@@ -55,14 +65,6 @@ export default function Navbar() {
     );
 }
 
-{/*<nav className="bg-primary items-center flex justify-between h-[10vh] fixed top-0 z-50 px-4 shadow-md bg-white w-full">
-    <h1 className="text-xl font-bold">Anesu Rirwa</h1>
-    
-    <div className="space-x-4">
-        <Link href="/">Dashboard</Link>
-        <Link href="/profile">Profile</Link>
-        <Link href="/projects">Models</Link>
-        <Link href="/insights">insights</Link>
-        <Link href="/connect">Connect</Link>
-    </div>
-</nav>*/}
+/*
+h-12 px-8 py-2 -mb-px text-sm text-center bg-transparent border-b-2 border-gray-200 sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none dark:border-gray-700 dark:hover:border-gray-400 hover:border-gray-400
+*/

@@ -14,12 +14,12 @@ const socialLinks = [
 const Socials = () => {
   return (
     <div className="flex justify-center">
-        <div className="flex justify-center space-x-6 mt-4">
+        <div className="flex justify-center space-x-6">
             {socialLinks.map((social, index) => (
                 <Link 
                     key={index}
                     href={social.url}
-                    className={`text-2xl text-[#38BDFC] hover:text-[#F28E2B] transition-colors duration-300`}
+                    className={`text-2xl text-white hover:text-blue-400 transition-colors duration-300`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.platformName}

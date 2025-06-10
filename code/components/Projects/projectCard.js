@@ -25,7 +25,9 @@ const ProjectsCard = ({project}) => {
           </span>
         ))}
       </div>
-      <div className="flex space-x-4 mt-4">
+      <div className="flex space-x-4 mt-4
+      justify-end">
+        {/* Assuming project.github and project.demo are valid URLs */}
         <Link href={project.github} className="text-blue-500">
           View Code
         </Link>
