@@ -1,23 +1,28 @@
 import React from 'react'
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaKaggle, FaEnvelope } from 'react-icons/fa';
+import { IoLogoTableau } from "react-icons/io5";
 
 const socialLinks = [
-    {platformName: 'Linkedin', icon: <FaLinkedin />, url: '#Linkedin', color: '#0077B5', hoverColor: '#005F91'},
-    {platformName: 'Github', icon: <FaGithub />, url: '#Github', color: '#24292e', hoverColor: '#1A1D21'},
-    {platformName: 'Kaggle', icon: <FaKaggle />, url: '#Kaggle', color: '#38BDFC', hoverColor: '#2C9ADF'},
-    {platformName: 'Envelope', icon: <FaEnvelope />, url: '#Envelope', color: '#4c4e50', hoverColor: '#1A1D21'}
+    {platformName: 'Linkedin', icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/anesurirwa/'},
+    {platformName: 'Kaggle', icon: <FaKaggle />, url: 'https://www.kaggle.com/anesurirwa'},
+    {platformName: 'Github', icon: <FaGithub />, url: 'https://github.com/anesu-rirwa'},
+    {platformName: 'Tableau', icon: <IoLogoTableau />, url: 'https://public.tableau.com/app/profile/anesu.rirwa/vizzes'},
+    {platformName: 'Envelope', icon: <FaEnvelope />, url: '#Envelope'}
 ];
 
 const Socials = () => {
   return (
     <div className="flex justify-center">
-        <div className="flex justify-center space-x-5 mt-4">
+        <div className="flex justify-center space-x-6 mt-4">
             {socialLinks.map((social, index) => (
                 <Link 
                     key={index}
                     href={social.url}
-                    className={`text-2xl bg-[${social.color}] hover:bg-[${social.hoverColor}]`}
+                    className={`text-2xl text-[#38BDFC] hover:text-[#F28E2B] transition-colors duration-300`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.platformName}
                     >
                         {social.icon}
                 </Link>
