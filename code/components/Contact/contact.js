@@ -35,7 +35,7 @@ const Contact = () => {
       };
 
     return (
-        <section className='flex flex-col items-center justify-center min-h-[90vh] '>
+        <section className='flex flex-col items-center justify-center min-h-[90vh] bg-[#0f0f0f]'>
             <div className="container px-10 md:px-6  mx-auto">
 
                 <div className="grid grid-cols-1 gap-6  lg:grid-cols-2">
@@ -83,7 +83,7 @@ const Contact = () => {
                         <p className="mt-3 text-gray-500 md:hidden">I&apos;d love to hear from you. Please fill out the form below to send me an email.</p>
                     </div>
 
-                    <div className="px-8 py-4 rounded-lg bg-gray-800 md:px-10">
+                    <div className="px-8 py-4 rounded-lg bg-[#1c1c1c] md:px-10">
                         <form onSubmit={handleSubmit} className="space-y-4 mt-6">
                             <div className='-mx-2 md:items-center md:flex'>
                                 <div className="flex-1 px-2 mt-4 md:mt-0">

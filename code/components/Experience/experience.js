@@ -1,12 +1,34 @@
+"use client"
+
 import React from 'react';
 import { FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa';
 import { SiTensorflow, SiPython, SiReact, SiNextdotjs, SiGithub, SiPytorch, SiScikitlearn, SiPandas, SiMysql, SiTableau, SiJavascript } from 'react-icons/si';
 import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
 import Link from 'next/link';
+import {motion} from 'framer-motion';
 
 const Experience = () => {
   return (
     <section className="min-h-screen bg-[#0f0f0f] text-white p-6 flex flex-col items-center">
+      <div className='text-center my-12'>
+        <motion.h2
+            className="text-2xl md:text-4xl font-bold text-white"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Experience & Education
+          </motion.h2>
+          <motion.p
+            className="mt-4 text-gray-400 max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            Here is a summary of my professional journey, showcasing my education and work experience in the fields of AI, Machine Learning, and Data Analysis.
+          </motion.p>
+      </div>
+
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 bg-[#1c1c1c] p-6 rounded-2xl shadow-lg">
         
         {/* Left Panel */}
@@ -21,11 +43,11 @@ const Experience = () => {
                   <p className="text-sm text-gray-400">2020 - 2024</p>
                 </div>
 
-                <p className="text-sm text-gray-300 mt-1">BSc. Honours Degree in AI and Machine Learning</p>
+                <p className="text-sm text-gray-300 mt-1 ">BSc. Honours Degree in AI and Machine Learning</p>
                   
                 <p className="text-sm text-gray-300">Grade: Upper Second Class (2:1)</p>
 
-                <p className="text-sm text-gray-400 italic">Thesis: Optimizing customer service operations for small and medium-sized enterprises using
+                <p className="text-sm text-gray-400 italic text-justify">Thesis: Optimizing customer service operations for small and medium-sized enterprises using
                 Artificial Intelligence and Machine Learning​</p>
               </div>
               
@@ -73,7 +95,7 @@ Consistently delivered multiple complex coding projects on time and within scope
               <div key={index} className="border-l-2 border-gray-600 pl-4">
                 <h4 className="font-semibold">{job.company}</h4>
                 <p className="text-sm text-gray-400">{job.role} · {job.period}</p>
-                <p className="text-sm text-gray-300 mt-1" style={{ whiteSpace: 'pre-wrap' }}>{job.description}</p>
+                <p className="text-sm text-gray-300 mt-1 text-justify" style={{ whiteSpace: 'pre-wrap' }}>{job.description}</p>
               </div>
             ))}
           </div>
