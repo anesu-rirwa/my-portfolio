@@ -9,7 +9,7 @@ import {motion} from 'framer-motion';
 
 const Experience = () => {
   return (
-    <section className="min-h-screen bg-[#0f0f0f] text-white p-6 flex flex-col items-center">
+    <section className="min-h-screen text-white p-6 flex flex-col items-center">
       <div className='text-center my-12'>
         <motion.h2
             className="text-2xl md:text-4xl font-bold text-white"

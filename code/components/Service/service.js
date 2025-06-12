@@ -53,10 +53,10 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-neutral-900 py-16 px-4 md:px-12">
+    <section className="py-16 px-4 md:px-12">
       <div className="max-w-7xl mx-auto text-center">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-white"
+          className="text-2xl md:text-4xl font-bold text-white"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -76,7 +76,7 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-neutral-800 rounded-xl p-6 text-left flex flex-col justify-between min-h-[240px] hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
+              className="bg-[#1c1c1c] rounded-xl p-6 text-left flex flex-col justify-between min-h-[240px] hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}

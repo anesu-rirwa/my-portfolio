@@ -1,12 +1,10 @@
 import Image from "next/image";
-import SkillBadge from "../SkillsBadge/skillsBadge";
-import MarqueeComponent from "./marquee";
 
 import React from 'react'
 
 const HomePage = () => {
   return (
-    <section className="min-h-[90vh] bg-[#0f0f0f] text-white flex flex-col items-center justify-center">
+    <section className="min-h-[90vh] text-white flex flex-col items-center justify-center">
       <div className="w-full max-w-2xl bg-[#1c1c1c] p-6 rounded-2xl shadow-lg">
         <div className="space-y-4 flex flex-col items-center justify-center"> 
           <Image

@@ -11,7 +11,7 @@ const socialLinks = [
     {platformName: 'Envelope', icon: <FaEnvelope />, url: '#Envelope'}
 ];
 
-const Socials = () => {
+const Socials = ({textColor}) => {
   return (
     <div className="flex justify-center">
         <div className="flex justify-center space-x-6">
@@ -19,7 +19,7 @@ const Socials = () => {
                 <Link 
                     key={index}
                     href={social.url}
-                    className={`text-2xl text-white hover:text-blue-400 transition-colors duration-300`}
+                    className={`text-2xl ${textColor} hover:text-blue-400 transition-colors duration-300`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.platformName}
