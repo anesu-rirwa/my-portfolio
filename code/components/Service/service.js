@@ -99,7 +99,7 @@ export default function Services() {
           {webServices.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-[#1c1c1c] rounded-xl p-6 text-left flex flex-col justify-between min-h-[240px] sm:hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
+              className="hidden bg-[#1c1c1c] rounded-xl p-6 text-left md:flex flex-col justify-between min-h-[240px]  hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}

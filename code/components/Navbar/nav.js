@@ -17,14 +17,14 @@ function classNames(...classes) {
 
 export default function Nav() {
   return (
-    <Disclosure as="nav" className="bg-[#1c1c1c] sm:min-h-[10vh]">
+    <Disclosure as="nav" className="sm:flex sm:justify-center bg-[#1c1c1c] sm:min-h-[10vh]">
       <div className="">
-        <div className="relative flex items-center justify-center sm:justify-between h-24">
-          <div className="flex items-center justify-start sm:justify-center border border-red-500">
+        <div className="relative flex items-center justify-center sm:justify-between h-16">
+          <div className="hidden sm:flex sm:items-center sm:justify-center">
             <div className="hidden ml-6 sm:ml-0 sm:block">
               <div className="flex">
                 {navigation.map((item) => (
-                    <Link key={item.name} href={item.href} aria-current={item.current ? 'page' : undefined} className="text-sm px-3 md:px-8 md:py-2 -mb-px md:text-center md:bg-transparent sm:border-b-3 font-semibold sm:border-gray-200 sm:text-base text-gray-200 whitespace-nowrap cursor-base sm:focus:outline-none 
+                    <Link key={item.name} href={item.href} aria-current={item.current ? 'page' : undefined} className="text-sm px-3 md:px-8 md:py-2 -mb-px md:text-center md:bg-transparent sm:border-b-3 font-semibold sm:border-gray-200 sm:text-base text-gray-200  cursor-base sm:focus:outline-none 
                   hover:text-teal-400
                   hover:border-teal-400
                   transition-colors duration-300">
@@ -48,14 +48,14 @@ export default function Nav() {
               </div>
               <MenuItems
                 transition
-                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-gray-200  text-[#0f0f0f] py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
               >
                 {navigation.map((item) => (
                   <MenuItem key={item.name}>
                     <a
                       href={item.href}
-                      className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                    >
+                      className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-[#0f0f0f] data-focus:outline-hidden data-focus:text-gray-200 data-focus:font-semibold" 
+                      >
                       {item.name}
                     </a>
                   </MenuItem>
