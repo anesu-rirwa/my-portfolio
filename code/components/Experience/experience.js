@@ -105,47 +105,47 @@ Consistently delivered multiple complex coding projects on time and within scope
       {/* Stack */}
       <div className="mt-6">
         <div className="flex flex-wrap gap-4 text-2xl">
-          <div title="Python" className="hover:scale-110 transition-transform duration-200">
+          <div title="Python" className="hover:scale-110 transition-transform hover:text-teal-400 duration-300">
             <SiPython className="text-2xl md:text-4xl mb-4" />
           </div>
 
-          <div title="MySQL" className="hover:scale-110 transition-transform duration-200">
+          <div title="MySQL" className="hover:scale-110 transition-transform duration-300 hover:text-teal-400">
             <SiMysql className="text-2xl md:text-4xl mb-4 " />
           </div>
 
-          <div title="Tensorflow" className="hover:scale-110 transition-transform duration-200">
+          <div title="Tensorflow" className="hover:scale-110 transition-transform duration-300 hover:text-teal-400">
             <SiTensorflow className="text-2xl md:text-4xl mb-4 " />
           </div>
 
-          <div title="Pytorch" className="hover:scale-110 transition-transform duration-200">
+          <div title="Pytorch" className="hover:scale-110 transition-transform duration-300 hover:text-teal-400">
             <SiPytorch className="text-2xl md:text-4xl mb-4" />
           </div>
 
-          <div title="Scikit Learn" className="hover:scale-110 transition-transform duration-200">
+          <div title="Scikit Learn" className="hover:scale-110 transition-transform duration-300 hover:text-teal-400">
             <SiScikitlearn className="text-2xl md:text-4xl mb-4" />
           </div>
 
-          <div title="Tableau" className="hover:scale-110 transition-transform duration-200">
+          <div title="Tableau" className="hover:scale-110 transition-transform duration-300 hover:text-teal-400">
             <SiTableau className="text-2xl md:text-4xl mb-4" />
           </div>
 
-          <div title="Excel" className="hover:scale-110 transition-transform duration-200">
+          <div title="Excel" className="hover:scale-110 transition-transform duration-300 hover:text-teal-400">
             <PiMicrosoftExcelLogoFill className="text-2xl md:text-4xl mb-4" />
           </div>
 
-          <div title="Javascript" className="hover:scale-110 transition-transform duration-200">
+          <div title="Javascript" className="hover:scale-110 transition-transform duration-300 hover:text-teal-400">
             <SiJavascript className="text-2xl md:text-4xl mb-4" />
           </div>
             
-          <div title="React" className="hover:scale-110 transition-transform duration-200">
+          <div title="React" className="hover:scale-110 transition-transform duration-300 hover:text-teal-400">
             <SiReact className="text-2xl md:text-4xl mb-4" />
           </div>
 
-          <div title="Next.js" className="hover:scale-110 transition-transform duration-200">
+          <div title="Next.js" className="hover:scale-110 transition-transform duration-300 hover:text-teal-400">
             <SiNextdotjs className="text-2xl md:text-4xl mb-4" />
           </div>
 
-          <div title="Github" className="hover:scale-110 transition-transform duration-200">
+          <div title="Github" className="hover:scale-110 transition-transform duration-300 hover:text-teal-400">
             <SiGithub className="text-2xl md:text-4xl mb-4" />
           </div>
         </div>

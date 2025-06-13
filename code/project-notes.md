@@ -56,3 +56,5 @@ Next.Js Version Used: @15.3.3
 - motion
 - swiper
   > Swiper - is the free and most modern mobile touch slider with hardware accelerated transitions and amazing native behavior. It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps.
+- @headlessui/react
+  > A set of completely unstyled, fully accessible UI components for React, designed to integrate beautifully with Tailwind CSS.

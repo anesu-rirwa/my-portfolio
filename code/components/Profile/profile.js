@@ -26,7 +26,7 @@ const Profile = () => {
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <div className='text-center my-12'>
+      <div className='text-center my-6 md:my-12'>
         <motion.h2
             className="text-2xl md:text-4xl font-bold text-white"
             initial={{ opacity: 0, y: -20 }}
@@ -35,18 +35,10 @@ const Profile = () => {
           >
             About Me
           </motion.h2>
-          <motion.p
-            className="mt-4 text-gray-400 max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            Here is a summary of my professional journey, showcasing my education and work experience in the fields of AI, Machine Learning, and Data Analysis.
-          </motion.p>
       </div>
 
       <motion.div
-        className="flex flex-col md:flex-row justify-center mt-4 md:space-x-12 space-y-8 md:space-y-0 max-w-6xl w-full"
+        className="flex flex-col md:flex-row justify-center text-center mt-4 md:text-left md:space-x-12 space-y-8 md:space-y-0 max-w-6xl w-full"
         variants={containerVariants}
       >
         {/* Column 1 */}

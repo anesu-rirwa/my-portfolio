@@ -19,7 +19,7 @@ const Socials = ({textColor}) => {
                 <Link 
                     key={index}
                     href={social.url}
-                    className={`text-2xl ${textColor} hover:text-blue-400 transition-colors duration-300`}
+                    className={`text-2xl ${textColor} transition-colors hover:scale-110 duration-300 hover:text-teal-400`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.platformName}
