@@ -76,10 +76,10 @@ const mobileServices = [
 
 export default function Services() {
   return (
-    <section className="py-16 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto text-center">
+    <section id='services' className="p-6 px-4 md:px-12">
+      <div className="max-w-7xl mx-auto text-center md:my-12">
         <motion.h2
-          className="text-2xl md:text-4xl font-bold text-gray-200"
+          className="text-2xl md:text-4xl font-bold text-gray-200 mt-6"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -95,11 +95,11 @@ export default function Services() {
           From analysis to automation, I provide cutting-edge AI and data solutions to help you grow, optimize, and innovate.
         </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12 place-items-center">
           {webServices.map((service, index) => (
             <motion.div
               key={index}
-              className="hidden bg-[#1c1c1c] rounded-xl p-6 text-left md:flex flex-col justify-between min-h-[240px]  hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
+              className="hidden bg-[#1c1c1c] rounded-xl p-6 text-left sm:flex flex-col justify-between min-h-[240px]  hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
@@ -116,17 +116,17 @@ export default function Services() {
           {mobileServices.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-[#1c1c1c] rounded-xl p-6 text-left flex flex-col justify-between min-h-[240px] md:hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
+              className="bg-[#1c1c1c] w-[80%] rounded-xl p-6 text-left flex flex-col min-h-[160px] md:hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="mb-4">{service.icon}</div>
-              <h3 className="text-gray-200 font-semibold text-xl mb-2 group-hover:text-teal-400 transition-colors duration-300">
+              <div className="mb-4 flex justify-center">{service.icon}</div>
+              <h3 className="text-gray-200 font-semibold text-xl mb-2 group-hover:text-teal-400 transition-colors duration-300 text-center">
                 {service.title}
               </h3>
-              <p className="text-gray-400 text-sm">{service.description}</p>
+              <p className="text-gray-400 text-sm text-center">{service.description}</p>
             </motion.div>
           ))}
         </div>

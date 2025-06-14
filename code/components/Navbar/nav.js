@@ -7,7 +7,7 @@ const navigation = [
   { name: 'About Me', href: '#about-me', current: false },
   { name: 'Services', href: '#services', current: false },
   { name: 'Experience', href: '#experience', current: false },
-  { name: 'Projects', href: '#project', current: false },
+  { name: 'Projects', href: '#projects', current: false },
   { name: 'Contact Me', href: '#contact-me', current: false },
 ]
 
@@ -17,7 +17,7 @@ function classNames(...classes) {
 
 export default function Nav() {
   return (
-    <Disclosure as="nav" className="sm:flex sm:justify-center bg-[#1c1c1c] sm:min-h-[10vh]">
+    <Disclosure as="nav" className="sm:flex sm:justify-center bg-[#1c1c1c] sm:min-h-[10vh] fixed shadow-md w-full z-50">
       <div className="">
         <div className="relative flex items-center justify-center sm:justify-between h-16">
           <div className="hidden sm:flex sm:items-center sm:justify-center">

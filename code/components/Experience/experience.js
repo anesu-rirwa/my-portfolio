@@ -9,10 +9,10 @@ import {motion} from 'framer-motion';
 
 const Experience = () => {
   return (
-    <section className="min-h-screen text-white p-6 flex flex-col items-center">
-      <div className='text-center my-12'>
+    <section id='experience' className=" text-gray-200 p-6 px-4 flex flex-col items-center">
+      <div className='text-center md:mt-12'>
         <motion.h2
-            className="text-2xl md:text-4xl font-bold text-white"
+            className="text-2xl md:text-4xl font-bold text-gray-200 mt-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -29,7 +29,7 @@ const Experience = () => {
           </motion.p>
       </div>
 
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 bg-[#1c1c1c] p-6 rounded-2xl shadow-lg">
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 bg-[#1c1c1c] p-6 rounded-2xl shadow-lg mt-6">
         
         {/* Left Panel */}
         <div className="col-span-1 flex flex-col">

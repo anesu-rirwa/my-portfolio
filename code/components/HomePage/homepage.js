@@ -7,7 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const HomePage = () => {
   return (
-    <section className="min-h-[90vh] text-white flex flex-col items-center justify-center">
+    <section id="dashboard" className="min-h-[90vh] text-white flex flex-col items-center justify-center">
       <div className=" max-w-2xl bg-[#1c1c1c] p-6 rounded-2xl shadow-lg">
         <div className="space-y-2 flex flex-col items-center justify-center"> 
           <Image
@@ -22,7 +22,7 @@ const HomePage = () => {
       
           <TypeAnimation
             sequence={[
-              "Artificial Intelligence Engineer",
+              "AI Engineer",
               2000,
               "Machine Learning Engineer",
               2000,

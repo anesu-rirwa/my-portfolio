@@ -20,7 +20,8 @@ const fadeInUp = {
 const Profile = () => {
   return (
     <motion.section
-      className="min-h-screen text-white p-6 flex flex-col items-center"
+      id='about-me'
+      className="min-h-screen text-gray-200 p-6 flex flex-col items-center"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -28,7 +29,7 @@ const Profile = () => {
     >
       <div className='text-center my-6 md:my-12'>
         <motion.h2
-            className="text-2xl md:text-4xl font-bold text-white"
+            className="text-2xl md:text-4xl font-bold text-gray-200 sm:mt-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

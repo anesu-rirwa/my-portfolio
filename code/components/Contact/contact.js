@@ -37,10 +37,10 @@ const Contact = () => {
       };
 
     return (
-        <section className='flex flex-col items-center justify-center min-h-[90vh] pb-8'>
-            <div className='text-center mt-12'>
+        <section id='contact-me' className='flex flex-col items-center justify-center p-6 px-4'>
+            <div className='text-center md:my-12'>
                     <motion.h2
-                      className="text-2xl md:text-4xl font-bold text-white"
+                      className="text-2xl md:text-4xl font-bold text-gray-200 mt-6"
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6 }}
@@ -62,7 +62,7 @@ const Contact = () => {
                     </motion.p>
                   </div>
 
-            <div className="container px-10 md:px-6 max-w-xl mx-auto mt-8">
+            <div className="container px-10 md:px-6 max-w-xl mx-auto mt-6 sm:mt-0">
                 <div className="px-8 py-4 rounded-lg bg-[#1c1c1c] md:px-10">
                     <form onSubmit={handleSubmit} className="space-y-4 mt-6">
                         <div className='-mx-2 md:items-center md:flex'>
@@ -93,7 +93,7 @@ const Contact = () => {
                             </div>
 
                             <div className="mt-4 flex items-center justify-end gap-x-6">
-                                <button type="submit" className="px-2 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">Send Message</button>
+                                <button type="submit" className="px-2 py-2 text-sm tracking-wide text-gray-200 mt-6 capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">Send Message</button>
                             </div>
                         </div>
                     </form>

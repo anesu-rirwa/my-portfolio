@@ -19,10 +19,10 @@ import { projectsList } from '@/data/data'
 
 const Projects = () => {
   return (
-    <section className='flex flex-col items-center justify-center min-h-[90vh]'>
-      <div className='text-center mt-12'>
+    <section id='projects' className='flex flex-col items-center justify-center p-6 px-4'>
+      <div className='text-center md:my-12'>
         <motion.h2
-          className="text-2xl md:text-4xl font-bold text-white"
+          className="text-2xl md:text-4xl font-bold text-gray-200 mt-6"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
