@@ -1,60 +1,67 @@
-"use client"
+'use client';
 
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper modules
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import React from 'react';
+import { motion } from 'framer-motion';
+import ProjectsCard from './projectCard';
+import { projectsList } from '@/data/data';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
-import '@/app/globals.css';
-import { motion } from 'framer-motion';  
-
-import ProjectCard from './projectCard'
-import { projectsList } from '@/data/data'
+const item = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
 
 const Projects = () => {
   return (
-    <section id='projects' className='flex flex-col items-center justify-center p-6 px-4'>
-      <div className='text-center md:my-12'>
+    <section
+      id="projects"
+      className="bg-[#0f0f0f] text-white py-16 px-4 md:px-12"
+    >
+      <div className="text-center">
         <motion.h2
-          className="text-2xl md:text-4xl font-bold text-gray-200 mt-6"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="text-3xl md:text-5xl font-bold mb-4"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
           My Projects
         </motion.h2>
+        <motion.p
+          className="text-gray-400 text-md max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          A collection of real-world solutions I’ve built using AI, ML, and data analysis.
+        </motion.p>
       </div>
- 
-      <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
+
+      {/* Grid layout */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
       >
         {projectsList.map((project, index) => (
-          <SwiperSlide key={index}>
-            <ProjectCard project={project} />
-          </SwiperSlide>
+          <motion.div key={index} variants={item}>
+            <ProjectsCard project={project} />
+          </motion.div>
         ))}
-      </Swiper>
+      </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
