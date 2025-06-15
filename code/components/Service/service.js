@@ -77,7 +77,7 @@ const mobileServices = [
 export default function Services() {
   return (
     <section id='services' className="p-6 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto text-center md:my-12">
+      <div className="mx-auto text-center md:my-12">
         <motion.h2
           className="text-2xl md:text-4xl font-bold text-gray-200 mt-6"
           initial={{ opacity: 0, y: -20 }}

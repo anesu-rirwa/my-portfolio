@@ -1,8 +1,6 @@
 "use client"
 
 import React, {useState} from 'react'
-import { FaGithub, FaLinkedin, FaKaggle, FaEnvelope } from 'react-icons/fa';
-import { IoLogoTableau } from "react-icons/io5";
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Socials from '../Footer/socials';
