@@ -47,12 +47,12 @@ export default function Work() {
       id="work"
       index="03"
       eyebrow="Selected work"
-      title="Systems in production, and a few experiments."
-      intro="Most of my work runs inside the organisations I build for, so where there’s no public link, the project is internal."
+      title="Things you can click on."
+      intro="Most of what I build runs inside the organisations I work for; these are the pieces that are public."
     >
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, i) => (
-          <Reveal key={project.title} delay={(i % 2) * 0.08}>
+          <Reveal key={project.title} delay={i * 0.08}>
             <Card project={project} />
           </Reveal>
         ))}

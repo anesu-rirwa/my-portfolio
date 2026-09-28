@@ -102,14 +102,9 @@ export const experience = [
   },
 ];
 
+// Only projects with a public link are shown. Internal work (MRIS, ore-grade model,
+// production forecasting) is described under Experience instead.
 export const projects = [
-  {
-    title: 'MRIS — Munisa Resources Internal System',
-    kind: 'ERP · In production',
-    description:
-      'Full-stack ERP that moved a mining group off paper logbooks and scattered spreadsheets onto one system, with live dashboards for directors, finance, procurement and the mine manager.',
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Supabase'],
-  },
   {
     title: 'DealRoom',
     kind: 'Marketplace · Live',
@@ -117,20 +112,6 @@ export const projects = [
       'Marketplace connecting Zimbabwean mineral claim holders with buyers and investors — confidential teaser listings, mandate registration and title details released only under NDA.',
     tags: ['Next.js', 'PostgreSQL', 'SEO'],
     link: 'https://dealroom.munisaresources.com',
-  },
-  {
-    title: 'Ore Grade Prediction',
-    kind: 'Machine learning · In progress',
-    description:
-      'XGBoost and Random Forest models that predict the grade of unmined blocks and flag economically viable ones, with spatial features and a dashboard for mine planning.',
-    tags: ['Python', 'XGBoost', 'Random Forest', 'Geospatial'],
-  },
-  {
-    title: 'Production & Cost Forecasting',
-    kind: 'Machine learning · Internal',
-    description:
-      'Regression model forecasting mine production output and operating costs (R² = 0.82), used to support operational and budget planning.',
-    tags: ['Python', 'scikit-learn', 'Forecasting'],
   },
   {
     title: 'British Airways Reviews',
