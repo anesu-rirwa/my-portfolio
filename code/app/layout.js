@@ -1,56 +1,75 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Footer from "@/components/Footer/footer";
-import Nav from "@/components/Navbar/nav";
+import { Geist, Geist_Mono, Bricolage_Grotesque } from 'next/font/google';
+import './globals.css';
+import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
+import SocialRail from '@/components/SocialRail';
+import { site } from '@/data/data';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
+const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
+const bricolage = Bricolage_Grotesque({ variable: '--font-bricolage', subsets: ['latin'] });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const title = `${site.name} | ${site.role}`;
+const description =
+  'Data & AI Engineer in Harare, Zimbabwe, building data systems, business intelligence and applied machine learning for mining, industrial and healthcare organisations.';
 
 export const metadata = {
-  title: "Anesu Rirwa | AI/ML Engineer & Data Analyst",
-  description: "Portfolio of Anesu Rirwa – showcasing projects, skills, and services in artificial intelligence, machine learning, and data analysis.",
-  authors: [{ name: "Anesu Rirwa", url: "https://www.tenagelabs.com" }],
+  metadataBase: new URL(site.url),
+  title,
+  description,
+  authors: [{ name: site.name, url: site.url }],
   keywords: [
-    "Anesu Rirwa",
-    "AI Engineer",
-    "Machine Learning Engineer",
-    "Data Analyst",
-    "Next.js Portfolio",
-    "Tenage Labs",
-    "Zimbabwe AI",
-    "AI Portfolio",
-    "Data Science Portfolio",
-    "Business Intelligence",
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Data Analytics",
+    'Anesu Rirwa',
+    'Data Engineer',
+    'AI Engineer',
+    'Machine Learning',
+    'Business Intelligence',
+    'Power BI',
+    'Next.js',
+    'Kordel Data',
+    'Zimbabwe',
+    'Harare',
   ],
+  alternates: { canonical: '/' },
   openGraph: {
-    title: "Anesu Rirwa | AI/ML Engineer & Data Analyst",
-    description: "Explore Anesu Rirwa's portfolio highlighting expertise in AI, ML, and data analytics.",
-    url: "https://www.tenagelabs.com",
-    siteName: "Anesu Rirwa Portfolio",
-    locale: "en_ZW",
-    type: "website",
+    title,
+    description,
+    url: site.url,
+    siteName: site.name,
+    locale: 'en_ZW',
+    type: 'website',
   },
+  twitter: { card: 'summary_large_image', title, description },
 };
 
+export const viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#faf9f6' },
+    { media: '(prefers-color-scheme: dark)', color: '#0e0c14' },
+  ],
+};
+
+// Runs before paint so a saved dark preference never flashes light. Light is the default.
+const themeScript = `(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})();`;
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} font-sans antialiased`}
       >
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-fg"
+        >
+          Skip to content
+        </a>
         <Nav />
-        {children}
+        <SocialRail />
+        <main id="main">{children}</main>
         <Footer />
       </body>
     </html>

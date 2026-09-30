@@ -1,67 +1,183 @@
+export const site = {
+  name: 'Anesu Rirwa',
+  role: 'Data & AI Engineer',
+  url: 'https://anesurirwa.vercel.app',
+  email: 'anesurirwa@outlook.com',
+  location: 'Harare, Zimbabwe',
+  cv: '/Anesu_Rirwa_CV.pdf',
+};
+
+export const navLinks = [
+  { name: 'About', href: '#about' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Work', href: '#work' },
+  { name: 'Expertise', href: '#expertise' },
+  { name: 'Contact', href: '#contact' },
+];
+
+export const socialLinks = [
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/anesurirwa/' },
+  { name: 'GitHub', url: 'https://github.com/anesu-rirwa' },
+  { name: 'Kaggle', url: 'https://www.kaggle.com/anesurirwa' },
+  { name: 'Tableau', url: 'https://public.tableau.com/app/profile/anesu.rirwa/vizzes' },
+  { name: 'Email', url: `mailto:${site.email}` },
+];
+
+export const stats = [
+  { value: '70%', label: 'less manual data preparation after automating mine tracking' },
+  { value: 'R² 0.82', label: 'production and cost forecasting model in use for planning' },
+  { value: '3', label: 'subsidiaries run on one ERP I designed and built' },
+  { value: '4+ yrs', label: 'shipping software, from websites to data platforms' },
+];
+
+export const experience = [
+  {
+    company: 'Munisa Resources',
+    url: 'https://munisaresources.com',
+    about: 'Mining and infrastructure group, Harare',
+    roles: [
+      {
+        title: 'Data & AI Engineer and Technology Lead',
+        period: 'Nov 2025 — Present',
+        points: [
+          'Own the technology stack and roadmap for the group and its three subsidiaries, from architecture through deployment and support.',
+          'Designed and built MRIS, a full-stack ERP for group-wide mining and corporate operations, with AI-driven reporting that parses daily shift inputs and forecasts operational trends.',
+          'Launched DealRoom, a marketplace connecting mineral claim holders with buyers and investors, with NDA-gated title details.',
+          'Produce weekly, monthly and board-level reporting on operations, production and market trends.',
+        ],
+      },
+      {
+        title: 'Data Analyst',
+        period: 'Jul 2025 — Oct 2025',
+        points: [
+          'Digitised paper logbooks and Word documents into an interim Excel and Power BI tracking system.',
+          'Automated tracking of explosives usage, production output and labour metrics, cutting manual data preparation by 70%.',
+          'Built a Python model forecasting production output and operational costs (R² = 0.82).',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'Kordel Data',
+    url: 'https://kordeldata.com',
+    about: 'Independent data & AI engineering practice',
+    roles: [
+      {
+        title: 'Founder & Principal Consultant',
+        period: 'Jan 2026 — Present',
+        points: [
+          'Maphompe Minerals: designed a structured data capture system from scratch and deployed live dashboards for day-to-day operational visibility.',
+          'Capital Physiotherapy: building the clinic’s website and patient records and bookings system, designed to comply with Zimbabwe’s Cyber and Data Protection Act.',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'Gifted Community Organisation',
+    about: 'Non-profit, Harare',
+    roles: [
+      {
+        title: 'Data Analyst & Software Engineer',
+        period: 'Jan 2025 — Jun 2026',
+        points: [
+          'Built the organisation’s website to improve donor visibility, engagement and transparency.',
+          'Researched funding models and resource allocation to guide growth and financial planning.',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'Webgems',
+    about: 'Web & mobile studio, Harare',
+    roles: [
+      {
+        title: 'Software Engineer Intern',
+        period: 'Aug 2022 — Aug 2023',
+        points: [
+          'Built responsive websites and cross-platform mobile apps with React, WordPress and Ionic.',
+          'Wrote tutorials and onboarding documentation for new team members and users.',
+        ],
+      },
+    ],
+  },
+];
+
+// Only projects with a public link are shown. Internal work (MRIS, ore-grade model,
+// production forecasting) is described under Experience instead.
+export const projects = [
+  {
+    title: 'DealRoom',
+    kind: 'Marketplace · Live',
+    description:
+      'Marketplace connecting Zimbabwean mineral claim holders with buyers and investors — confidential teaser listings, mandate registration and title details released only under NDA.',
+    tags: ['Next.js', 'PostgreSQL', 'SEO'],
+    link: 'https://dealroom.munisaresources.com',
+  },
+  {
+    title: 'British Airways Reviews',
+    kind: 'Dashboard',
+    description:
+      'Sentiment analysis of customer reviews in an interactive dashboard highlighting pain points and satisfaction trends.',
+    tags: ['Tableau', 'Sentiment analysis'],
+    link: 'https://public.tableau.com/app/profile/anesu.rirwa/viz/BritishAirwaysReviews_17398212926130/Dashboard',
+  },
+  {
+    title: 'Netflix Content Trends',
+    kind: 'Dashboard',
+    description:
+      'Interactive dashboard exploring how Netflix’s catalogue has shifted across genres, countries and release years.',
+    tags: ['Tableau', 'Data visualisation'],
+    link: 'https://public.tableau.com/app/profile/anesu.rirwa/viz/NetflixDashboard_17377463926360/Netflix',
+  },
+];
+
+export const services = [
+  {
+    title: 'Data systems',
+    description: 'Structured data capture, relational database design and ETL pipelines that replace paper and spreadsheets.',
+  },
+  {
+    title: 'Business intelligence',
+    description: 'Power BI and Tableau dashboards and board-ready reporting that people actually use every day.',
+  },
+  {
+    title: 'Applied machine learning',
+    description: 'Forecasting and prediction models built on your own operational data and put into production.',
+  },
+  {
+    title: 'Web applications',
+    description: 'Production Next.js and TypeScript apps, from internal tools to public-facing marketplaces.',
+  },
+];
+
 export const skills = [
-    'Python', 'SQL', 'Machine Learning', 'Data Visualisation', 'Deep Learning', 'Natural Language Processing', 'Computer Vision', 'Predictive Modeling', 'Tensorflow', 'Scikit-Learn', 'Neural Networks', 'Tableau', 'Data Analysis', 'Git', 'Pandas', 'NumPy'
-]
+  { group: 'Programming', items: ['Python', 'TypeScript', 'SQL'] },
+  { group: 'Machine learning', items: ['scikit-learn', 'XGBoost', 'Random Forest', 'Forecasting', 'NLP', 'TensorFlow', 'PyTorch'] },
+  { group: 'Data & BI', items: ['PostgreSQL', 'Supabase', 'ETL pipelines', 'Pandas', 'NumPy', 'Power BI', 'Tableau', 'Excel', 'SharePoint'] },
+  { group: 'Software', items: ['Next.js', 'React', 'Flask', 'Git', 'SEO', 'WordPress', 'Ionic'] },
+];
 
-export const projectsList = [
-  {
-    title: "Tenage Labs - AI & Data Consultancy",
-    description:
-      "A platform offering AI/ML consulting, custom model development, and deployment solutions for startups and SMEs.",
-    technologies: ["Next.js", "Python", "ML Ops", "FastAPI"],
-    demo: "https://tenagelabs.com",
-  },
-  {
-    title: "British Airways Reviews Dashboard",
-    description:
-      "Analyzed customer sentiment from reviews and created a dynamic dashboard to highlight pain points and customer satisfaction trends.",
-    technologies: ["Tableau", "Data Analysis", "Data Visualization"],
-    demo: "https://public.tableau.com/app/profile/anesu.rirwa/viz/BritishAirwaysReviews_17398212926130/Dashboard",
-  },
+export const education = {
+  school: 'University of Zimbabwe',
+  degree: 'BSc (Hons) Artificial Intelligence and Machine Learning',
+  detail: 'Upper Second Class (2.1) · Class Representative',
+  period: '2020 — 2024',
+  thesis: 'Optimising customer service operations for SMEs and solopreneurs using AI and machine learning.',
+};
 
-  {
-    title: "House Price Prediction Model",
-    description:
-      "Developed regression models to predict house prices based on location, room count, and amenities using XGBoost and Random Forest.",
-    technologies: ["Python", "Scikit-learn", "XGBoost"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "Stock Price Direction Prediction",
-    description:
-      "Used SVM to predict the next-day stock price direction from historical Yahoo Finance data.",
-    technologies: ["Python", "SVM", "Yahoo Finance"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "Netflix Movies & TV Shows Dashboard",
-    description:
-      "Built an interactive Tableau dashboard analyzing content trends, genres, and viewer preferences using Netflix data.",
-    technologies: ["Tableau", "Analytics", "Data Viz"],
-    demo: "https://public.tableau.com/app/profile/anesu.rirwa/viz/NetflixDashboard_17377463926360/Netflix",
-  },
-  {
-    title: "Customer Churn Prediction",
-    description:
-      "Created classification models to identify churn risk using logistic regression and Streamlit for live predictions.",
-    technologies: ["Python", "Streamlit", "Random Forest"],
-    github: "#",
-  },
-  {
-    title: "Content-Based Music Recommender",
-    description:
-      "Built a recommendation engine using cosine similarity to suggest songs based on audio features like energy and valence.",
-    technologies: ["Python", "Scikit-learn", "NLP"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "Document Analyzer with GPT-3",
-    description:
-      "Summarizes legal PDFs and TXT files using OpenAI's GPT-3 and Streamlit, preserving document structure.",
-    technologies: ["Python", "OpenAI API", "Streamlit"],
-    github: "#",
-    demo: "#",
-  },
+export const certifications = [
+  { name: 'Python for Data Science', issuer: 'IBM', status: '2025' },
+  { name: 'Azure Fundamentals (AZ-900)', issuer: 'Microsoft', status: 'Exam Nov 2026' },
+  { name: 'Azure AI Engineer Associate (AI-102)', issuer: 'Microsoft', status: 'Preparing' },
+];
+
+export const community = [
+  { name: 'Uncommon.org', role: 'Volunteer mentor in programming and data science', period: '2023 — 2025' },
+  { name: 'All In Open Source', role: 'All In Africa programme — hackathons and workshops', period: '2023 — 2024' },
+];
+
+export const languages = [
+  { name: 'English', level: 'Duolingo 140' },
+  { name: 'Shona', level: 'Fluent' },
+  { name: 'German', level: 'A1, A2 in progress' },
 ];
