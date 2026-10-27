@@ -27,7 +27,7 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 88, fontWeight: 700, lineHeight: 1.05 }}>{site.name}</div>
           <div style={{ fontSize: 48, color: '#4a2fbd', marginTop: 16 }}>{site.role}</div>
           <div style={{ fontSize: 28, color: '#5f5b69', marginTop: 28 }}>
-            Data systems · Business intelligence · Applied machine learning
+            Machine learning · Data systems · Business intelligence
           </div>
         </div>
       </div>

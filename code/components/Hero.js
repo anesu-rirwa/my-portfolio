@@ -42,10 +42,10 @@ export default function Hero() {
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">Based in {site.location}</p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 text-balance font-display text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl lg:text-[4.25rem]">
               Hi! I&rsquo;m Anesu.
               <br />
-              <span className="text-accent">Data &amp; AI</span> Engineer.
+              <span className="text-accent">AI &amp; Machine Learning</span> Engineer.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>

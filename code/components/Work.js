@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FiArrowUpRight } from 'react-icons/fi';
 import Section from './Section';
 import Reveal from './Reveal';
@@ -8,7 +9,7 @@ function Card({ project }) {
     <>
       <div className="flex items-start justify-between gap-4">
         <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{project.kind}</p>
-        {project.link && (
+        {(project.link || project.slug) && (
           <FiArrowUpRight
             className="size-5 shrink-0 text-muted transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
             aria-hidden="true"
@@ -32,6 +33,15 @@ function Card({ project }) {
   const className =
     'group flex h-full flex-col rounded-3xl border border-line bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5';
 
+  if (project.slug) {
+    return (
+      <Link href={`/notebooks/${project.slug}`} className={className}>
+        {body}
+        <p className="mt-6 text-sm font-semibold text-accent">Read the notebook and results</p>
+      </Link>
+    );
+  }
+
   return project.link ? (
     <a href={project.link} target="_blank" rel="noopener noreferrer" className={className}>
       {body}
@@ -48,7 +58,7 @@ export default function Work() {
       index="03"
       eyebrow="Selected work"
       title="Things you can click on."
-      intro="Most of what I build runs inside the organisations I work for; these are the pieces that are public."
+      intro="Most of what I build runs inside the organisations I work for; these are the pieces that are public. Each notebook opens with its code and results."
     >
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, i) => (

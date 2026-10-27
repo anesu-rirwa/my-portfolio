@@ -20,7 +20,7 @@ export default function About() {
           </p>
           <p>
             I hold a BSc (Hons) in Artificial Intelligence and Machine Learning from the University of Zimbabwe and am
-            working towards Microsoft Azure certification.
+            completing Andrew Ng&rsquo;s Machine Learning Specialization.
           </p>
         </Reveal>
 
