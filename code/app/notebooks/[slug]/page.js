@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { FiArrowLeft, FiDownload, FiGithub } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight, FiDownload, FiGithub } from 'react-icons/fi';
 import { loadNotebook } from '@/lib/notebook';
 import { projects, site } from '@/data/data';
 
@@ -64,8 +64,10 @@ function CodeCell({ cell }) {
 
 export default async function NotebookPage({ params }) {
   const { slug } = await params;
-  const project = notebooks.find((p) => p.slug === slug);
-  if (!project) notFound();
+  const index = notebooks.findIndex((p) => p.slug === slug);
+  if (index === -1) notFound();
+  const project = notebooks[index];
+  const next = notebooks[(index + 1) % notebooks.length];
 
   const { cells } = await loadNotebook(project.notebook);
 
@@ -81,6 +83,7 @@ export default async function NotebookPage({ params }) {
       <header className="mt-8 border-b border-line pb-10">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">{project.kind}</p>
         <h1 className="mt-4 font-display text-4xl font-bold tracking-tight md:text-5xl">{project.title}</h1>
+        {project.result && <p className="mt-4 text-xl font-semibold text-accent">{project.result}</p>}
         <p className="mt-5 text-lg leading-relaxed text-muted">{project.description}</p>
         <ul className="mt-6 flex flex-wrap gap-2" aria-label="Technologies">
           {project.tags.map((tag) => (
@@ -109,7 +112,8 @@ export default async function NotebookPage({ params }) {
           )}
         </div>
         <p className="mt-6 text-sm text-muted">
-          The full notebook, shown with the outputs from its last run in Google Colab. Datasets are not included.
+          The full notebook, shown with the outputs from its last run.
+          {project.data && <> Data: {project.data}.</>}
         </p>
       </header>
 
@@ -122,6 +126,20 @@ export default async function NotebookPage({ params }) {
           )
         )}
       </div>
+
+      <Link
+        href={`/notebooks/${next.slug}`}
+        className="group mt-16 flex items-center justify-between gap-6 rounded-3xl border border-line bg-surface p-7 transition-colors hover:border-accent/40"
+      >
+        <div>
+          <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">Next notebook</p>
+          <p className="mt-2 font-display text-2xl font-semibold tracking-tight transition-colors group-hover:text-accent">
+            {next.title}
+          </p>
+          {next.result && <p className="mt-1 text-sm text-muted">{next.result}</p>}
+        </div>
+        <FiArrowRight className="size-6 shrink-0 text-muted transition-all group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true" />
+      </Link>
     </article>
   );
 }

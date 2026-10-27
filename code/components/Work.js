@@ -16,10 +16,14 @@ function Card({ project }) {
           />
         )}
       </div>
-      <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight transition-colors group-hover:text-accent">
+      <h4 className="mt-6 font-display text-2xl font-semibold tracking-tight transition-colors group-hover:text-accent">
         {project.title}
-      </h3>
-      <p className="mt-3 flex-1 leading-relaxed text-muted">{project.description}</p>
+      </h4>
+      {project.result && <p className="mt-3 font-semibold text-accent">{project.result}</p>}
+      {/* Notebook cards show a preview; the full write-up is on the notebook page. */}
+      <div className="mt-3 flex-1">
+        <p className={`leading-relaxed text-muted ${project.slug ? 'line-clamp-5' : ''}`}>{project.description}</p>
+      </div>
       <ul className="mt-6 flex flex-wrap gap-2" aria-label="Technologies">
         {project.tags.map((tag) => (
           <li key={tag} className="rounded-full bg-accent-soft px-3 py-1 text-xs font-medium text-accent">
@@ -51,20 +55,43 @@ function Card({ project }) {
   );
 }
 
+const groups = [
+  {
+    title: 'Machine learning notebooks',
+    intro: 'Each one opens with the full code and results, including the checks for leaks and inflated scores.',
+    items: projects.filter((p) => p.notebook),
+  },
+  {
+    title: 'Products and dashboards',
+    intro: 'Live apps and dashboards you can use.',
+    items: projects.filter((p) => !p.notebook),
+  },
+];
+
 export default function Work() {
   return (
     <Section
       id="work"
       index="03"
       eyebrow="Selected work"
-      title="Things you can click on."
-      intro="Most of what I build runs inside the organisations I work for; these are the pieces that are public. Each notebook opens with its code and results."
+      title="Models you can read, products you can use."
+      intro="Most of my data systems run inside the organisations I work for. These are the pieces that are public."
     >
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, i) => (
-          <Reveal key={project.title} delay={i * 0.08}>
-            <Card project={project} />
-          </Reveal>
+      <div className="space-y-16">
+        {groups.map((group) => (
+          <div key={group.title}>
+            <Reveal className="mb-8 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+              <h3 className="font-display text-xl font-semibold tracking-tight">{group.title}</h3>
+              <p className="text-sm text-muted">{group.intro}</p>
+            </Reveal>
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {group.items.map((project, i) => (
+                <Reveal key={project.title} delay={(i % 3) * 0.08}>
+                  <Card project={project} />
+                </Reveal>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </Section>
