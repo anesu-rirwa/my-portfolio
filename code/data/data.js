@@ -112,6 +112,7 @@ export const projects = [
     kind: 'NLP · African languages',
     description:
       'A next-word prediction model for Shona, a low-resource African language. I built a Shona text corpus from PDF documents, cleaned and tokenised it, and trained word embeddings on it with Word2Vec. I compared two bidirectional LSTM models, one learning its own embeddings and one using the Word2Vec embeddings, and kept the one with lower validation loss. Given five Shona words, the model suggests the words that come next.',
+    result: 'Own Shona corpus · two BiLSTMs compared',
     tags: ['Python', 'TensorFlow/Keras', 'BiLSTM', 'Word2Vec'],
     slug: 'shona-next-word-prediction',
     notebook: 'Shona_Next_Word_Prediction.ipynb',
@@ -121,15 +122,50 @@ export const projects = [
     kind: 'Machine learning · Sports analytics',
     description:
       'XGBoost models that predict international football matches, covering the result, goals, both teams scoring, corners and cards, trained on 7,900 matches from 2002 to 2026. I found and removed a data leak that had been inflating accuracy, tested on the most recent 20% of matches, and calibrated the probabilities. The result model reaches 59.9% accuracy against a 47.5% always-home-win baseline. I benchmarked it against bookmaker odds, which it does not yet beat, and set out the next features to close that gap.',
+    result: '59.9% accuracy vs 47.5% baseline',
     tags: ['Python', 'XGBoost', 'Probability calibration', 'Time-based validation'],
     slug: 'fifa-world-cup-2026-match-prediction',
     notebook: 'FIFA_World_Cup_2026_Match_Prediction.ipynb',
+  },
+  {
+    title: 'Chronic Kidney Disease Prediction',
+    kind: 'Machine learning · Health',
+    description:
+      'A classification model that identifies chronic kidney disease from routine clinical measurements, trained on 400 patients with 24 measurements each. I found and removed two leaks: row IDs that were sorted by diagnosis, and missing tests that on their own predicted the label with 79% accuracy. I then cut the model down to four routine tests: haemoglobin, serum creatinine, urine specific gravity and urine albumin. On 100 held-out patients it reached 97% accuracy and caught 96.8% of CKD cases, with recall as the key metric because a missed patient is the costly error.',
+    result: '97% accuracy · 96.8% recall with 4 tests',
+    tags: ['Python', 'scikit-learn', 'Logistic regression', 'Leakage checks'],
+    data: 'UCI Chronic Kidney Disease dataset (public on Kaggle), 400 patients',
+    slug: 'chronic-kidney-disease-prediction',
+    notebook: 'Chronic_Kidney_Disease_Prediction.ipynb',
+  },
+  {
+    title: 'Loan Approval Prediction',
+    kind: 'Machine learning · Finance',
+    description:
+      'A model that predicts whether a home-loan application is approved, trained on 614 labelled applications. I filled missing values inside the modelling pipeline so no test data leaked into training, and compared logistic regression, random forest and XGBoost against two baselines: always approving, and a one-line credit-history rule. Logistic regression reached 85.4% accuracy and ROC-AUC 0.86 on the held-out test set. The rule matches it on accuracy, so the model’s real value is a probability score for ranking applications for review.',
+    result: '85.4% accuracy · ROC-AUC 0.86',
+    tags: ['Python', 'scikit-learn', 'Logistic regression', 'XGBoost'],
+    data: 'Loan Prediction dataset, Dream Housing Finance (public on Kaggle), 614 applications',
+    slug: 'loan-approval-prediction',
+    notebook: 'Loan_Approval_Prediction.ipynb',
+  },
+  {
+    title: 'Customer Churn Prediction',
+    kind: 'Machine learning · Customer analytics',
+    description:
+      'A model that predicts which subscription customers will leave, trained on 64,374 customers. Tree models scored close to 100% against 83% for logistic regression, so I tested whether that was believable: a single decision tree with 10 levels of rules reaches 99.8%, which shows the labels are rule-generated and the score would not carry over to real customers. The notebook ends with retention triggers a team could act on: payments more than 20 days late (77% churn), five or more support calls (61%) and low usage (65%).',
+    result: 'Sanity check exposed rule-generated labels',
+    tags: ['Python', 'scikit-learn', 'XGBoost', 'Decision trees'],
+    data: 'Customer Churn Dataset (public on Kaggle), 64,374 customers',
+    slug: 'customer-churn-prediction',
+    notebook: 'Customer_Churn_Prediction.ipynb',
   },
   {
     title: 'Calorie Burn Prediction',
     kind: 'Machine learning · Health',
     description:
       'A regression model that predicts calories burned during exercise from gender, age, height, weight, duration, heart rate and body temperature, trained on 15,000 workout records. XGBoost reached R² = 0.999 with a mean error of 1.2 kcal on the test set, against R² = 0.969 for linear regression. The notebook includes an interactive predictor for new inputs.',
+    result: 'R² 0.999 · 1.2 kcal mean error',
     tags: ['Python', 'scikit-learn', 'XGBoost', 'Regression'],
     slug: 'calorie-burn-prediction',
     notebook: 'Calorie_Burn_Prediction.ipynb',
@@ -139,6 +175,7 @@ export const projects = [
     kind: 'Machine learning · Classification',
     description:
       'A classification model that predicts which Titanic passengers survived from class, sex, age, fare and family size. I imputed missing ages, engineered a family-size feature, and compared logistic regression with a random forest. The random forest reached 83% accuracy on the test set.',
+    result: '83% accuracy',
     tags: ['Python', 'scikit-learn', 'Random Forest', 'Logistic regression'],
     slug: 'titanic-survival-prediction',
     notebook: 'Titanic_Survival_Prediction.ipynb',
@@ -198,15 +235,14 @@ export const inProgress = [
     description:
       'Collecting property listings from Zimbabwean property sites to analyse how prices vary by city, suburb and property type. The listings will train a model that estimates a property’s price from its location, size and features.',
   },
-  {
-    title: 'Chronic Kidney Disease Prediction',
-    kind: 'Machine learning · Health',
-    description:
-      'A classification model that predicts chronic kidney disease from routine clinical measurements such as blood pressure, blood tests and urine results. The model is tuned for recall, so fewer at-risk patients are missed.',
-  },
 ];
 
 export const services = [
+  {
+    title: 'Applied machine learning',
+    description:
+      'Prediction, forecasting and NLP models built on your own data, checked for leakage against honest baselines and put into production.',
+  },
   {
     title: 'Data systems',
     description: 'Structured data capture, relational database design and ETL pipelines that replace paper and spreadsheets.',
@@ -216,18 +252,17 @@ export const services = [
     description: 'Power BI and Tableau dashboards and board-ready reporting that people actually use every day.',
   },
   {
-    title: 'Applied machine learning',
-    description: 'Forecasting and prediction models built on your own operational data and put into production.',
-  },
-  {
     title: 'Web applications',
     description: 'Production Next.js and TypeScript apps, from internal tools to public-facing marketplaces.',
   },
 ];
 
 export const skills = [
+  {
+    group: 'Machine learning',
+    items: ['scikit-learn', 'XGBoost', 'TensorFlow/Keras', 'PyTorch', 'NLP', 'Word2Vec', 'LSTMs', 'Random Forest', 'Logistic regression', 'Forecasting', 'Probability calibration', 'Model validation'],
+  },
   { group: 'Programming', items: ['Python', 'TypeScript', 'SQL'] },
-  { group: 'Machine learning', items: ['scikit-learn', 'XGBoost', 'Random Forest', 'Forecasting', 'NLP', 'TensorFlow', 'PyTorch'] },
   { group: 'Data & BI', items: ['PostgreSQL', 'Supabase', 'ETL pipelines', 'Pandas', 'NumPy', 'Power BI', 'Tableau', 'Excel', 'SharePoint'] },
   { group: 'Software', items: ['Next.js', 'React', 'Flask', 'Git', 'SEO', 'WordPress', 'Ionic'] },
 ];

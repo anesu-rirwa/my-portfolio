@@ -50,8 +50,8 @@ export default function Hero() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
-              I build the data systems, dashboards and machine learning models that turn day-to-day operations into
-              clear decisions. I lead technology at Munisa Resources and run the consultancy Kordel Data.
+              I build machine learning models, and the data systems and dashboards behind them, that turn day-to-day
+              operations into clear decisions. I lead technology at Munisa Resources and run the consultancy Kordel Data.
             </p>
           </Reveal>
           <Reveal delay={0.24} className="mt-10 flex flex-wrap gap-3">

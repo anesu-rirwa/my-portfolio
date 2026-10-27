@@ -3,7 +3,7 @@ import Section from './Section';
 import Reveal from './Reveal';
 import { services, skills } from '@/data/data';
 
-const icons = [FiDatabase, FiBarChart2, FiCpu, FiCode];
+const icons = [FiCpu, FiDatabase, FiBarChart2, FiCode];
 
 export default function Expertise() {
   return (
