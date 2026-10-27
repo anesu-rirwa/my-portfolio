@@ -44,7 +44,7 @@ export default function Contact() {
     <section id="contact" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
       <div className="grid gap-14 rounded-[2.5rem] bg-accent-soft p-8 sm:p-12 md:grid-cols-2 md:p-16">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">06 — Contact</p>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">07 — Contact</p>
           <h2 className="mt-4 font-display text-4xl font-bold tracking-tight md:text-5xl">
             Let&rsquo;s put your data to work.
           </h2>

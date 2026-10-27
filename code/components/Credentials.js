@@ -25,7 +25,7 @@ function Row({ name, detail, meta }) {
 
 export default function Credentials() {
   return (
-    <Section id="education" index="05" eyebrow="Education" title="Learning, certifications & community.">
+    <Section id="education" index="06" eyebrow="Education" title="Learning, certifications & community.">
       <div className="grid gap-5 md:grid-cols-2">
         <Card title="Education">
           <div className="flex items-baseline justify-between gap-4">

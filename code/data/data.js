@@ -1,24 +1,23 @@
 export const site = {
   name: 'Anesu Rirwa',
-  role: 'Data & AI Engineer',
-  url: 'https://anesurirwa.vercel.app',
+  role: 'AI & Machine Learning Engineer',
+  url: 'https://anesu.kordeldata.com',
   email: 'anesurirwa@outlook.com',
   location: 'Harare, Zimbabwe',
   cv: '/Anesu_Rirwa_CV.pdf',
 };
 
 export const navLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Work', href: '#work' },
-  { name: 'Expertise', href: '#expertise' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'About', href: '/#about' },
+  { name: 'Experience', href: '/#experience' },
+  { name: 'Work', href: '/#work' },
+  { name: 'Expertise', href: '/#expertise' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export const socialLinks = [
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/anesurirwa/' },
   { name: 'GitHub', url: 'https://github.com/anesu-rirwa' },
-  { name: 'Kaggle', url: 'https://www.kaggle.com/anesurirwa' },
   { name: 'Tableau', url: 'https://public.tableau.com/app/profile/anesu.rirwa/vizzes' },
   { name: 'Email', url: `mailto:${site.email}` },
 ];
@@ -40,6 +39,7 @@ export const experience = [
         title: 'Data & AI Engineer and Technology Lead',
         period: 'Nov 2025 — Present',
         points: [
+          'Built a Python machine learning model forecasting production grade, tonnage and costs (R² = 0.82), now used for budgeting and planning.',
           'Own the technology stack and roadmap for the group and its three subsidiaries, from architecture through deployment and support.',
           'Designed and built MRIS, a full-stack ERP for group-wide mining and corporate operations, with AI-driven reporting that parses daily shift inputs and forecasts operational trends.',
           'Launched DealRoom, a marketplace connecting mineral claim holders with buyers and investors, with NDA-gated title details.',
@@ -52,7 +52,6 @@ export const experience = [
         points: [
           'Digitised paper logbooks and Word documents into an interim Excel and Power BI tracking system.',
           'Automated tracking of explosives usage, production output and labour metrics, cutting manual data preparation by 70%.',
-          'Built a Python model forecasting production output and operational costs (R² = 0.82).',
         ],
       },
     ],
@@ -78,7 +77,7 @@ export const experience = [
     roles: [
       {
         title: 'Data Analyst & Software Engineer',
-        period: 'Jan 2025 — Jun 2026',
+        period: 'Jan 2025 — Jun 2025',
         points: [
           'Built the organisation’s website to improve donor visibility, engagement and transparency.',
           'Researched funding models and resource allocation to guide growth and financial planning.',
@@ -104,7 +103,62 @@ export const experience = [
 
 // Only projects with a public link are shown. Internal work (MRIS, ore-grade model,
 // production forecasting) is described under Experience instead.
+// Projects with a `notebook` get their own page at /notebooks/[slug], rendered from
+// public/notebooks/<notebook> with the outputs from its last run. Add `repo` once the
+// notebook has a public GitHub repository.
 export const projects = [
+  {
+    title: 'Shona Next-Word Prediction',
+    kind: 'NLP · African languages',
+    description:
+      'A next-word prediction model for Shona, a low-resource African language. I built a Shona text corpus from PDF documents, cleaned and tokenised it, and trained word embeddings on it with Word2Vec. I compared two bidirectional LSTM models, one learning its own embeddings and one using the Word2Vec embeddings, and kept the one with lower validation loss. Given five Shona words, the model suggests the words that come next.',
+    tags: ['Python', 'TensorFlow/Keras', 'BiLSTM', 'Word2Vec'],
+    slug: 'shona-next-word-prediction',
+    notebook: 'Shona_Next_Word_Prediction.ipynb',
+  },
+  {
+    title: 'FIFA World Cup 2026 Match Prediction',
+    kind: 'Machine learning · Sports analytics',
+    description:
+      'XGBoost models that predict international football matches, covering the result, goals, both teams scoring, corners and cards, trained on 7,900 matches from 2002 to 2026. I found and removed a data leak that had been inflating accuracy, tested on the most recent 20% of matches, and calibrated the probabilities. The result model reaches 59.9% accuracy against a 47.5% always-home-win baseline. I benchmarked it against bookmaker odds, which it does not yet beat, and set out the next features to close that gap.',
+    tags: ['Python', 'XGBoost', 'Probability calibration', 'Time-based validation'],
+    slug: 'fifa-world-cup-2026-match-prediction',
+    notebook: 'FIFA_World_Cup_2026_Match_Prediction.ipynb',
+  },
+  {
+    title: 'Calorie Burn Prediction',
+    kind: 'Machine learning · Health',
+    description:
+      'A regression model that predicts calories burned during exercise from gender, age, height, weight, duration, heart rate and body temperature, trained on 15,000 workout records. XGBoost reached R² = 0.999 with a mean error of 1.2 kcal on the test set, against R² = 0.969 for linear regression. The notebook includes an interactive predictor for new inputs.',
+    tags: ['Python', 'scikit-learn', 'XGBoost', 'Regression'],
+    slug: 'calorie-burn-prediction',
+    notebook: 'Calorie_Burn_Prediction.ipynb',
+  },
+  {
+    title: 'Titanic Survival Prediction',
+    kind: 'Machine learning · Classification',
+    description:
+      'A classification model that predicts which Titanic passengers survived from class, sex, age, fare and family size. I imputed missing ages, engineered a family-size feature, and compared logistic regression with a random forest. The random forest reached 83% accuracy on the test set.',
+    tags: ['Python', 'scikit-learn', 'Random Forest', 'Logistic regression'],
+    slug: 'titanic-survival-prediction',
+    notebook: 'Titanic_Survival_Prediction.ipynb',
+  },
+  {
+    title: 'ImariiMaCharges',
+    kind: 'Web app · Fintech',
+    description:
+      'A web app that tells you what an EcoCash transaction will cost before you send it. I built the charge calculations from real EcoCash USD transaction SMS data, so the figures match what users are actually charged. Next, users will be able to compare charges across other wallets and banks, such as CABS and NMB.',
+    tags: ['Web app', 'Data from SMS records', 'Kordel Data product'],
+    link: 'https://imariimacharges.kordeldata.com',
+  },
+  {
+    title: 'Stridetale (Beta)',
+    kind: 'Web app · Health and fitness',
+    description:
+      'A running and lifting app that turns training into a journey. You pick a real finish line, and every logged run and lift moves you along the real road towards it, with Tsoko the monkey to chase on the way. It is phone-first and currently in beta testing.',
+    tags: ['Web app', 'Gamification', 'Mobile-first', 'Kordel Data product'],
+    link: 'https://stridetale.kordeldata.com',
+  },
   {
     title: 'DealRoom',
     kind: 'Marketplace · Live',
@@ -128,6 +182,27 @@ export const projects = [
       'Interactive dashboard exploring how Netflix’s catalogue has shifted across genres, countries and release years.',
     tags: ['Tableau', 'Data visualisation'],
     link: 'https://public.tableau.com/app/profile/anesu.rirwa/viz/NetflixDashboard_17377463926360/Netflix',
+  },
+];
+
+export const inProgress = [
+  {
+    title: 'Shona Language Model',
+    kind: 'NLP · African languages',
+    description:
+      'Building on my Shona next-word prediction work. I am benchmarking how well current large language models understand and translate Shona, then fine-tuning an open-source multilingual model to improve its Shona, with native-speaker review of the results.',
+  },
+  {
+    title: 'Zimbabwe Housing Market Analysis',
+    kind: 'Data analysis · Machine learning',
+    description:
+      'Collecting property listings from Zimbabwean property sites to analyse how prices vary by city, suburb and property type. The listings will train a model that estimates a property’s price from its location, size and features.',
+  },
+  {
+    title: 'Chronic Kidney Disease Prediction',
+    kind: 'Machine learning · Health',
+    description:
+      'A classification model that predicts chronic kidney disease from routine clinical measurements such as blood pressure, blood tests and urine results. The model is tuned for recall, so fewer at-risk patients are missed.',
   },
 ];
 
@@ -162,13 +237,13 @@ export const education = {
   degree: 'BSc (Hons) Artificial Intelligence and Machine Learning',
   detail: 'Upper Second Class (2.1) · Class Representative',
   period: '2020 — 2024',
-  thesis: 'Optimising customer service operations for SMEs and solopreneurs using AI and machine learning.',
+  thesis:
+    'Optimising customer service operations for SMEs and solopreneurs using AI and machine learning, including a Shona–English natural language processing component.',
 };
 
 export const certifications = [
   { name: 'Python for Data Science', issuer: 'IBM', status: '2025' },
-  { name: 'Azure Fundamentals (AZ-900)', issuer: 'Microsoft', status: 'Exam Nov 2026' },
-  { name: 'Azure AI Engineer Associate (AI-102)', issuer: 'Microsoft', status: 'Preparing' },
+  { name: 'Machine Learning Specialization', issuer: 'DeepLearning.AI and Stanford Online (Andrew Ng)', status: 'In progress' },
 ];
 
 export const community = [
@@ -177,7 +252,7 @@ export const community = [
 ];
 
 export const languages = [
-  { name: 'English', level: 'Duolingo 140' },
-  { name: 'Shona', level: 'Fluent' },
-  { name: 'German', level: 'A1, A2 in progress' },
+  { name: 'English', level: 'C1 (Duolingo 140)' },
+  { name: 'Shona', level: 'Native' },
+  { name: 'German', level: 'A2, studying B1' },
 ];

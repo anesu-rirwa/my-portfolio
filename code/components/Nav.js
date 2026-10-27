@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi';
 import ThemeToggle from './ThemeToggle';
 import { navLinks } from '@/data/data';
@@ -25,19 +26,19 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6" aria-label="Main">
-        <a href="#top" className="font-display text-2xl font-bold tracking-tight">
+        <Link href="/#top" className="font-display text-2xl font-bold tracking-tight">
           anesu<span className="text-accent">.</span>
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="text-xs font-semibold uppercase tracking-[0.14em] text-muted transition-colors hover:text-fg"
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -61,13 +62,13 @@ export default function Nav() {
         <ul id="mobile-menu" className="border-t border-line px-6 py-4 md:hidden">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="block py-3 font-display text-2xl font-semibold"
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

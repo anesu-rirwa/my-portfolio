@@ -7,7 +7,7 @@ const icons = [FiDatabase, FiBarChart2, FiCpu, FiCode];
 
 export default function Expertise() {
   return (
-    <Section id="expertise" index="04" eyebrow="Expertise" title="What I can help you with.">
+    <Section id="expertise" index="05" eyebrow="Expertise" title="What I can help you with.">
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service, i) => {
           const Icon = icons[i];

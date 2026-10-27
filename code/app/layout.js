@@ -11,7 +11,7 @@ const bricolage = Bricolage_Grotesque({ variable: '--font-bricolage', subsets: [
 
 const title = `${site.name} | ${site.role}`;
 const description =
-  'Data & AI Engineer in Harare, Zimbabwe, building data systems, business intelligence and applied machine learning for mining, industrial and healthcare organisations.';
+  'AI & Machine Learning Engineer in Harare, Zimbabwe, building machine learning models, data systems and business intelligence for mining, industrial and healthcare organisations.';
 
 export const metadata = {
   metadataBase: new URL(site.url),
@@ -20,9 +20,12 @@ export const metadata = {
   authors: [{ name: site.name, url: site.url }],
   keywords: [
     'Anesu Rirwa',
-    'Data Engineer',
     'AI Engineer',
+    'Machine Learning Engineer',
     'Machine Learning',
+    'NLP',
+    'Shona',
+    'Data Engineer',
     'Business Intelligence',
     'Power BI',
     'Next.js',
